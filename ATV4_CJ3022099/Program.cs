@@ -297,38 +297,43 @@ namespace ATV4_CJ3022099
                     Console.WriteLine($"Novo salário: R$ {novoSalario:F2}");
                     Console.WriteLine($"Diferença: R$ {diferenca:F2}");
                     break;
+
                 case 7:
-                    //Lista 4 (exercicio 6)
+                //Lista 4 (exercicio 6)
+                    int faixa;
+                    float salario1;
+                    Console.WriteLine("Qual o seu salário?");
+                    salario1 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite a faixa salaríal:" +
+                        "\n1 - R$1903,98" +
+                        "\n2 - Entre R$ 1.903,99 e R$ 2.826,65" +
+                        "\n3 - Entre R$ 2.826,66 e R$ 3.751,05" +
+                        "\n4 - Entre R$ 3.751,06 e R$ 4.664,68" +
+                        "\n5 - Acima de R$ 4.664,68");
+                    faixa = int.Parse(Console.ReadLine());
 
-                    double sal, imposto = 0, salarioLiquido = 0;
-                    Console.WriteLine("Digite o salário mensal do trabalhador:");
-                    sal = double.Parse(Console.ReadLine());
-
-                    if (sal <= 1903.98)
+                    switch (faixa)
                     {
-                        imposto = 0;
+                        case 1:
+                            Console.WriteLine("Não precisa pagar imposto");
+                            break;
+                        case 2:
+                            salario1 -= ((salario1 / 100) * 7.5f);
+                            Console.WriteLine("O salário líquido é de: {0}", salario1);
+                            break;
+                        case 3:
+                            salario1 -= ((salario1 / 100) * 15);
+                            Console.WriteLine("O salário líquido é de: {0}", salario1);
+                            break;
+                        case 4:
+                            salario1 -= ((salario1 / 100) * 22.5f);
+                            Console.WriteLine("O salário líquido é de: {0}", salario1);
+                            break;
+                        case 5:
+                            salario1 -= ((salario1 / 100) * 27.5f);
+                            Console.WriteLine("O salário líquido é de: {0}", salario1);
+                            break;
                     }
-                    else if (sal <= 2826.65)
-                    {
-                        imposto = (sal - 1903.98) * 0.075;
-                    }
-                    else if (sal <= 3751.05)
-                    {
-                        imposto = (sal - 2826.65) * 0.15 + 69.22;
-                    }
-                    else if (sal <= 4664.68)
-                    {
-                        imposto = (sal - 3751.05) * 0.225 + 352.80;
-                    }
-                    else
-                    {
-                        imposto = (sal - 4664.68) * 0.275 + 869.36;
-                    }
-
-                    salarioLiquido = sal - imposto;
-
-                    Console.WriteLine($"Imposto a ser recolhido: R$ {imposto:F2}");
-                    Console.WriteLine($"Salário líquido: R$ {salarioLiquido:F2}");
                     break;
             }
         }
