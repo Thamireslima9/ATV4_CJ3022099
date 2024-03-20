@@ -22,19 +22,19 @@
             switch (oper)
             {
                 case 1:
-                    Console.WriteLine(soma);
+                    Console.WriteLine("O resultado da sua soma é de: {0}", soma);
                     break;
 
                 case 2:
-                    Console.WriteLine(subtração);
+                    Console.WriteLine("O resultado da sua soma é de: {0}",subtração);
                     break;
 
                 case 3:
-                    Console.WriteLine(multiplicação);
+                    Console.WriteLine("O resultado da sua soma é de: {0}",multiplicação);
                     break;
 
                 case 4:
-                    Console.WriteLine(divisão);
+                    Console.WriteLine("O resultado da sua soma é de: {0:F2}",divisão);
                     break;
 
                 default:
